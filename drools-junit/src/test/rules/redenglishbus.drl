@@ -1,0 +1,17 @@
+//created on: 07.02.2013
+package de.getrost.drools.test.junit.example
+
+import de.getrost.drools.test.junit.example.Bus
+
+rule "English Busses are red"
+
+    when
+        //conditions
+        forall( 
+        	Bus( country == "GB", b1 : busNumber  )
+        	Bus( busNumber == b1, color == "red" ) )
+    then
+        //actions
+		System.out.println("All english busses are red");
+end
+
